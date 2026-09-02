@@ -5,10 +5,10 @@
 This project analyzes healthcare patient and appointment data to identify trends in patient demographics, departmental performance, billing, appointment scheduling, and follow-up requirements.
 
 ## Tools Used
-Microsoft Excel
-MySQL
-Power BI
-Business Questions
+1. Microsoft Excel
+2. MySQL
+3. Power BI
+4. Business Questions
 
 The analysis seeks to answer:
 
