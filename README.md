@@ -61,33 +61,32 @@ CREATE TABLE healthcare_pd (
 -- Checking for missing values and inconsistent values
 
 ```MySQL
- SUM(patient_id IS NULL) AS missing_patient_id,
-    SUM(patient_name IS NULL) AS missing_patient_name,
-    SUM(age IS NULL) AS missing_age,
-    SUM(gender IS NULL) AS missing_gender,
-    SUM(appointment_date IS NULL) AS missing_appointment_date,
-    SUM(booking_date IS NULL) AS missing_booking_date,
-    SUM(doctor IS NULL) AS missing_doctor,
-    SUM(department IS NULL) AS missing_department,
-    SUM(billing_amount IS NULL) AS missing_billing_amount,
-    SUM(follow_up_required IS NULL) AS missing_follow_up
+SELECT
+    SUM(TRIM(patient_name) = '') AS missing_patient_name,
+    SUM(TRIM(gender) = '') AS missing_gender,
+    SUM(TRIM(follow_up_required) = '') AS missing_follow_up,
+    SUM(TRIM(doctor) = '') AS missing_doctor,
+    SUM(TRIM(department) = '') AS missing_department,
+    SUM(TRIM(booking_date) = '') AS missing_booking_date,
+    SUM(TRIM(billing_amount) = '') AS missing_billing_amount,
+    SUM(TRIM(appointment_date) = '') AS missing_appointment_date
 FROM healthcare_pd;
 ```
 
 ```MySQL
-SELECT *
+SELECT
+    patient_id,
+    patient_name,
+    gender,
+    billing_amount,
+    appointment_date,
+    department
 FROM healthcare_pd
-WHERE TRIM(patient_name) = ''
-   OR TRIM(gender) = ''
-   OR TRIM(follow_up_required) = ''
-   OR TRIM(doctor) = ''
-   OR TRIM(department) = ''
-   OR TRIM(booking_date) = ''
-   OR TRIM(billing_amount) = ''
-   OR TRIM(appointment_date) = '';
+WHERE TRIM(gender) = ''
+   OR TRIM(billing_amount) = '';
 ```
 
--- Cheking for duplicates
+Duplicates
 
 ```MySQL
 SELECT 
@@ -98,6 +97,17 @@ GROUP BY patient_id
 HAVING COUNT(*) > 1;
 ```
 
+Inconsistent characters
+
+```
+MySQL
+SELECT
+    gender,
+    COUNT(*) AS frequency
+FROM healthcare_pd
+GROUP BY gender
+ORDER BY frequency DESC;
+```
 
 ## Visualizing the Data on Excel
 <img width="1158" height="489" alt="Excel Dashboard new" src="https://github.com/user-attachments/assets/6775f10e-1944-47e1-a0e8-93445b86647a" />
