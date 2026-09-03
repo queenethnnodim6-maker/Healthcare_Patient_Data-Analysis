@@ -24,7 +24,7 @@ The analysis seeks to answer:
 
 ## Data Cleaning
 
-The dataset was cleaned and standardized using Excel and MySQL. The processed involved are:
+The dataset was cleaned and standardized using Excel and MySQL. EBoth tools were used to showcase strenght in the use of the tool. The processed involved are:
 
 1. Removing unnecessary spaces
 2. Standardizing categorical values
@@ -35,6 +35,54 @@ The dataset was cleaned and standardized using Excel and MySQL. The processed in
 7. Creating calculated fields
 8. Validating booking and appointment dates
 9. Analysis of Key business insights
+
+## SQL Queries used in cleaning the Dataset
+
+```MySQL
+CREATE TABLE healthcare_pd (
+    Patient_ID INT,
+    Patient_Name VARCHAR(100),
+    Age INT,
+    Age_Group VARCHAR(20),
+    Gender VARCHAR(10),
+    Booking_Date DATE,
+    Appointment_Date DATE,
+    Booking_Lead_Days INT,
+    Appointment_Year INT,
+    Appointment_Month VARCHAR(20),
+    Appointment_Month_Year VARCHAR(20),
+    Doctor VARCHAR(100),
+    Department VARCHAR(50),
+    Billing_Amount DECIMAL(10,2),
+    Follow_Up_Required VARCHAR(5)
+);
+```
+
+-- Checking for missing values and inconsistent values
+
+```MySQL
+SELECT *
+FROM healthcare_pd
+WHERE TRIM(patient_name) = ''
+   OR TRIM(gender) = ''
+   OR TRIM(follow_up_required) = ''
+   OR TRIM(doctor) = ''
+   OR TRIM(department) = ''
+   OR TRIM(booking_date) = ''
+   OR TRIM(billing_amount) = ''
+   OR TRIM(appointment_date) = '';
+```
+
+-- Cheking for duplicates
+
+```MySQL
+SELECT 
+    patient_id,
+    COUNT(*) AS duplicate_count
+FROM healthcare_pd
+GROUP BY patient_id
+HAVING COUNT(*) > 1;
+```
 
 
 ## Visualizing the Data on Excel
