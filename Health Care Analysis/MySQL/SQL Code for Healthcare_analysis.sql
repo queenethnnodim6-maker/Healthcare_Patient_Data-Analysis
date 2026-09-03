@@ -1,24 +1,7 @@
--- This project deals with Healthcare Patient data. 
--- An Exploratory Data Analysis was done before proper analysis of the data was conducted. 
 
--- KEY INSIGHTS ANALYZED
--- Patient Appointment Frequency
--- Business question:
--- Which patients are visiting the hospital most frequently?
--- Average Billing Amount by Department ⭐⭐⭐⭐⭐
--- Business question:
--- Which departments have the highest average billing per appointment?
--- Follow-Up Rate by Gender 
--- Business question:
--- Is there a difference in follow-up requirements between male and female patients?
--- Average Patient Age by Department ⭐⭐⭐⭐
--- Business question:
--- What is the average age of patients visiting each department?
--- Patients with Multiple Appointments ⭐⭐⭐⭐⭐
--- Business question:
--- How many patients returned for more than one appointment?
-
+```MySQL
 CREATE DATABASE healthcare_analysis;
+```
 
 USE healthcare_analysis;
 
