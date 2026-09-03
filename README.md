@@ -61,6 +61,20 @@ CREATE TABLE healthcare_pd (
 -- Checking for missing values and inconsistent values
 
 ```MySQL
+ SUM(patient_id IS NULL) AS missing_patient_id,
+    SUM(patient_name IS NULL) AS missing_patient_name,
+    SUM(age IS NULL) AS missing_age,
+    SUM(gender IS NULL) AS missing_gender,
+    SUM(appointment_date IS NULL) AS missing_appointment_date,
+    SUM(booking_date IS NULL) AS missing_booking_date,
+    SUM(doctor IS NULL) AS missing_doctor,
+    SUM(department IS NULL) AS missing_department,
+    SUM(billing_amount IS NULL) AS missing_billing_amount,
+    SUM(follow_up_required IS NULL) AS missing_follow_up
+FROM healthcare_pd;
+```
+
+```MySQL
 SELECT *
 FROM healthcare_pd
 WHERE TRIM(patient_name) = ''
