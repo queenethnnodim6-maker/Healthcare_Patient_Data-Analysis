@@ -1,7 +1,4 @@
-
-```MySQL
 CREATE DATABASE healthcare_analysis;
-```
 
 USE healthcare_analysis;
 
