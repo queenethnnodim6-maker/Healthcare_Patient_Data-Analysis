@@ -8,7 +8,6 @@ This project analyzes healthcare patient and appointment data to identify trends
 1. Microsoft Excel
 2. MySQL
 3. Power BI
-4. Business Questions
 
 The analysis seeks to answer:
 
