@@ -99,8 +99,7 @@ HAVING COUNT(*) > 1;
 
 Inconsistent characters
 
-```
-MySQL
+```MySQL
 SELECT
     gender,
     COUNT(*) AS frequency
