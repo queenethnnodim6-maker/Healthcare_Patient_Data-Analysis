@@ -24,7 +24,7 @@ The analysis seeks to answer:
 
 ## Data Cleaning
 
-The dataset was cleaned and standardized using Excel and MySQL, including:
+The dataset was cleaned and standardized using Excel and MySQL. The processed involved are:
 
 1. Removing unnecessary spaces
 2. Standardizing categorical values
@@ -34,6 +34,13 @@ The dataset was cleaned and standardized using Excel and MySQL, including:
 6. Converting billing amounts to numeric values
 7. Creating calculated fields
 8. Validating booking and appointment dates
-9. Analysis
+9. Analysis of Key business insights
 
-Excel Pivot Tables and charts were used for exploratory analysis before developing the final Power BI dashboard.
+
+## Visualizing the Data on Excel
+<img width="1158" height="489" alt="Excel Dashboard new" src="https://github.com/user-attachments/assets/6775f10e-1944-47e1-a0e8-93445b86647a" />
+
+
+
+
+
